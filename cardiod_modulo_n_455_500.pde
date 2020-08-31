@@ -12,13 +12,15 @@ Times Tables, Mandelbrot and the Heart of Mathematics
 by Burkard Polster and Giuseppe Geracitano
 see: http://codepen.io/hippiefuturist/full/NAvqgk/
 */
-int w = 9411 ; // width of image
-int h = 9411; // height of image
+float scale = 0.1; 
+float w = 9411 * scale ; // width of image
+float h = 9411 * scale; // height of image
 float n = 500; // Modulus/Points
 float m = 455; // Multiplication Factor
 void setup() {
 background(255); 
-size(9411, 9411);
+// size(9411, 9411); // full scale for Redbubble
+size(941, 941); // full scale for Redbubble
 smooth();
 noLoop();
 }
@@ -31,15 +33,15 @@ connectPoints(n, radius, i, i * m);
 }
 // draw the outline circle
 noFill();
-strokeWeight(35);
+strokeWeight(35 * scale);
 ellipse(width/2, height /2, radius * 2, radius * 2);
-save("cardiod_modulo_n_455_500.png");
-exit();
+save("cardiod_modulo_n_455_500x941.png");
+// exit();
 }
 void cardioid(float n, float r) {
 // draws n points on a circle
 double step = 2 * PI/n; 
-int offset = w / 2;
+float offset = w / 2;
 // draw n points on circle
 for (float theta=0; theta < 2 * PI; theta += step) {
 float x = offset + r * cos(theta);
@@ -51,13 +53,13 @@ stroke(255, 0, 0);
 void connectPoints(float n, float r, float firstPoint, float secondPoint) {
 // Connect two points on a circle
 float step = 2 * PI/n; 
-int offset = w / 2;
+float offset = w / 2;
 // draw n points on circle
 float x1 = offset + r * cos(firstPoint * step);
 float y1 = offset - r * sin(firstPoint * step);
 float x2 = offset + r * cos(secondPoint * step);
 float y2 = offset -r * sin(secondPoint * step);
-strokeWeight(15);
+strokeWeight(15 * scale);
 stroke(0, 0, 0);
 line(x1, y1, x2, y2);
 }
