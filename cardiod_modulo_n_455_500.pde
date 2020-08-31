@@ -11,6 +11,10 @@ also pased on https://www.youtube.com/watch?v=qhbuKbxJsk8&amp...
 Times Tables, Mandelbrot and the Heart of Mathematics
 by Burkard Polster and Giuseppe Geracitano
 see: http://codepen.io/hippiefuturist/full/NAvqgk/
+
+Artwork on Redbubble at: https://www.redbubble.com/shop/ap/24619400
+Code on Github at: https://github.com/rupertrussell/cardiod_modulo_n_455_500
+
 */
 float scale = 0.1; 
 float w = 9411 * scale ; // width of image
